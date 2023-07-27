@@ -1,8 +1,8 @@
 # social_media
-# Project title: Django Social
+** Project title: Django Social **
 Project description: Django Social is a social media platform built with the Django web framework. It allows users to create profiles, post messages, follow other users, and like and comment on posts.
-# Features:
-User profiles with bio, location, and interests
+** Features **:
+ - User profiles with bio, location, and interests
 Post messages with text, images, and videos
 Follow other users to see their posts in your feed Like and comment on posts
 Search for users and posts
