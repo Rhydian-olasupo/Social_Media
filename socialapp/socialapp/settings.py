@@ -130,6 +130,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = 'core/media/'
 
-MEDIA_ROOT = [
-    "core/media",
-]
+MEDIA_ROOT = "core/media"
