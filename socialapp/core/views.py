@@ -10,7 +10,9 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     user_object = User.objects.get(username=request.user.username)
     user_profile = Profile.objects.get(user=user_object)
-    return render(request,'index.html',{'user_profile':user_profile})
+
+    posts = Post.objects.all()
+    return render(request,'index.html',{'user_profile':user_profile,'posts':posts})
 
 def signup(request):
     if request.method == 'POST':
@@ -94,11 +96,13 @@ def settings(request):
         return redirect('settings')
 
     return render(request, 'setting.html', {'user_profile':user_profile})
+
+
 @login_required(login_url='signin')
 def upload(request):
     if request.method == 'POST':
         user = request.user.username
-        image = request.FILES.get['image_upload']
+        image = request.FILES.get('image_upload')
         caption = request.POST['caption']
 
         new_post = Post.objects.create(user=user,image=image,caption=caption)
@@ -106,4 +110,3 @@ def upload(request):
         return redirect('/')
     else:
         return redirect("/")
-    return HttpResponse('<h1>Upload View</h1>')
